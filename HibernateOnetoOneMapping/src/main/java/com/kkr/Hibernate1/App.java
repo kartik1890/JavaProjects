@@ -14,9 +14,11 @@ public class App
     {
         System.out.println( "Hello World!" );
         
+        try {
+        	
         StudentInfo s1= new StudentInfo();
-        s1.setName("Kartik");
-        s1.setRollno(10);
+        s1.setName("Kartik 007");
+        s1.setRollno(700);
         
         SessionFactory sf= new AnnotationConfiguration().configure().buildSessionFactory();
         Session session= sf.openSession();
@@ -27,7 +29,12 @@ public class App
         session.getTransaction().commit();
         session.close();
         sf.close();
-        
+        }
+        catch(Exception e)
+        {
+        	System.out.println(e.getMessage());
+        	System.out.println("Bro, something is worng");
+        }
         System.out.println("Program ends");
     }
 }
